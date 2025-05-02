@@ -1,6 +1,215 @@
-@use "fonts";
 @use "reset";
 @use "vars";
 @use "global";
-@use "main";
-@use "badges";
+
+.main-header {
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px;
+
+  .btn-size {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+  }
+
+  .header-left-side {
+    display: flex;
+    align-items: center;
+
+    .burger-btn {
+      margin-right: 8px;
+
+      @media (min-width: 1024px) {
+        margin-right: 12px;
+      }
+    }
+  }
+
+  .action-buttons {
+    display: flex;
+    align-items: center;
+
+    .match-radio-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 7px;
+      width: 87px;
+      height: 40px;
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--main-color);
+    }
+
+    .search-btn {
+      display: none;
+    }
+
+    .avatar-btn {
+      display: none;
+    }
+
+    .star-dot-icon {
+      display: none;
+    }
+
+    .ring-notif-icon {
+      display: none;
+    }
+
+    @media (min-width: 1024px) {
+      .match-radio-btn {
+        display: none;
+      }
+
+      .search-btn {
+        display: flex;
+      }
+
+      .avatar-btn {
+        display: flex;
+      }
+
+      .star-dot-icon {
+        display: flex;
+      }
+
+      .ring-notif-icon {
+        display: flex;
+      }
+
+      .star-icon {
+        display: none;
+      }
+
+      .ring-icon {
+        display: none;
+      }
+    }
+  }
+
+  @media (min-width: 1024px) {
+    padding: 8px;
+  }
+}
+
+.top-nav {
+  display: none;
+
+  @media (min-width: 1024px) {
+    display: block;
+
+    .list {
+      border-bottom: 1px solid var(--accent-color);
+      display: flex;
+      padding: 15px 20px;
+    }
+
+    .item {
+      font-size: 14px;
+      color: rgba($color: var(--main-text-color), $alpha: 0.7);
+    }
+
+    .item:first-child {
+      position: relative;
+      text-transform: uppercase;
+      display: flex;
+      gap: 8px;
+      padding-right: 32px;
+      color: rgba($color: var(--main-text-color), $alpha: 0.9);
+    }
+
+    .item:first-child::after {
+      content: "";
+      width: 1px;
+      height: 12px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 16px;
+      background-color: var(--accent-color);
+    }
+
+    .item:not(:first-child):not(:last-child) {
+      margin-right: 32px;
+    }
+  }
+}
+
+.secondary-nav {
+  padding: 16px 12px;
+
+  .list {
+    display: flex;
+
+    .item {
+      font-size: 12px;
+      line-height: 1;
+      color: rgba($color: var(--main-text-color), $alpha: 0.38);
+    }
+
+    .item:first-child {
+      color: rgba($color: var(--main-text-color), $alpha: 0.7);
+    }
+
+    .item:not(:last-child) {
+      position: relative;
+      padding-right: 32px;
+    }
+
+    .item:not(:last-child)::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      background-image: url("../../public/next.png");
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 12px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    border-bottom: 1px solid var(--accent-color);
+    padding: 16px 20px;
+  }
+}
+
+.tournament-section {
+  padding-left: 12px;
+  padding-right: 12px;
+  margin-bottom: 32px;
+
+  .content-wrapper {
+    border: 1px solid var(--accent-color);
+    border-radius: 2px;
+  }
+
+  .tournament-header {
+    display: flex;
+    gap: 12px;
+    padding: 16px 16px 24px 16px;
+    border-bottom: 1px solid var(--accent-color);
+
+    .title {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 1.11;
+      text-transform: capitalize;
+      color: rgba($color: var(--main-text-color), $alpha: 0.9);
+      padding-top: 8px;
+      margin-bottom: 8px;
+    }
+
+    .description {
+      font-size: 12px;
+      line-height: 1;
+      color: rgba($color: var(--main-text-color), $alpha: 0.38);
+    }
+  }
+}
