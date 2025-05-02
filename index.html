@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/sass.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sport Info</title>
+    <script type="module" crossorigin src="/vite-sass-app-template/assets/index-875b9161.js"></script>
+    <link rel="stylesheet" href="/vite-sass-app-template/assets/index.css">
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="header-left-side">
+        <button class="burger-btn btn-size">
+          <svg width="18" height="12">
+            <use href="/vite-sass-app-template/assets/sprite.svg#burger"></use>
+          </svg>
+        </button>
+        <a class="page-logo" href="#">
+          <img src="data:image/png;base64,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" alt="logo" />
+        </a>
+      </div>
+      <div class="action-buttons">
+        <button class="match-radio-btn">
+          <svg width="18" height="18">
+            <use href="/vite-sass-app-template/assets/sprite.svg#radio"></use></svg
+          >Матчи
+        </button>
+        <button class="btn-size">
+          <svg class="star-icon" width="20" height="19">
+            <use href="/vite-sass-app-template/assets/sprite.svg#star"></use>
+          </svg>
+          <svg class="star-dot-icon" width="40" height="40">
+            <use href="/vite-sass-app-template/assets/sprite.svg#star-dot"></use>
+          </svg>
+        </button>
+        <button class="btn-size">
+          <svg class="ring-icon" width="16" height="19">
+            <use href="/vite-sass-app-template/assets/sprite.svg#ring"></use>
+          </svg>
+          <svg class="ring-notif-icon" width="40" height="40">
+            <use href="/vite-sass-app-template/assets/sprite.svg#ring-notif"></use>
+          </svg>
+        </button>
+        <button class="btn-size search-btn">
+          <svg width="20" height="20">
+            <use href="/vite-sass-app-template/assets/sprite.svg#search"></use>
+          </svg>
+        </button>
+        <button class="btn-size avatar-btn">
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAKYSURBVHgBtZZNTxNRFIbfO7SJn7GRlcbouLDupAgbEwW6ZWPZa4RNMUJi/AXSfyAJGFmJiXELasK2FE100dgRV8LC0WgTF5gxNoi2zOHc6XSgX8xtp32TyczcubdPzul77j0CChp8Mz1ik7hJZI9AQOehiPvJ4ssQ0AxN0MvsjblVv98Sh328unZvnCAe8qMONZkClPow9HgRrQBj7+7qotSzBEIM7cmkcDhuXHtk1n7QagcG3k7dEcWeXACYlC6KxVxsbTpR+6EqwgGeYIOW0EGRhnHj+vyzOqCTRhnZviE6JYvT219Jr5dShqW7AJOKiP9FL2tOhK4bnzZbcTJ0FPHeK1Vj+Z1fyP7ehKrYvRPSvSH54lofzYHHMBO9XTcuoQvfVvD653v4yWUshmRR7xLpUJAEJNdncfbIab56kTw/ilT0FgqlbaS31v2W6zFmabaNBFpQ/t+Wk8pXHFXy06wz1ij6RtKYpZGgPrSp/E4ZLv/jwVOXfOcTaFi6NEiBY6Pw3bmf4TT7ivdhCQxUCn9Kf1uZHtEQUJePn3PuBUWwBFoIoOiJMvBz4YfKdEuDECba1OSFUadEstam415/CSMkbGRIqBlHunGSa0/eZWTSmbI2ZzaeqyyHIHwM2RqW+eG+ygIHyFFJyZJY+LqCF/lVNs62ynI4LPnQn5n64rYO3RPBzA3PX3RcysWfQpdVYXjnIUeZgwi2CTSnlaOTj14dkr07hoAl0gRmkR2OV149oBF/YvJe9wAdFgkxYcT3m6mqncbgA5LPrc5EKiPjQ9cYmls+ONy4TUxzf6Nxy9GucwkGp3HsYGSHAj0wtx6C+KRWBbM5pBuNVhvhOrBzUiPBO1IfiGK8KuICOPWCu21kZFEbCq3+HrFhAWiTFPC/AAAAAElFTkSuQmCC" alt="avatar" width="28" height="28" />
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <nav class="top-nav">
+        <ul class="list">
+          <li class="item">
+            <svg width="16" height="16">
+              <use href="/vite-sass-app-template/assets/sprite.svg#ball"></use>
+            </svg>
+            <a href="#"> Футбол</a>
+          </li>
+          <li class="item"><a href="#">Зачет медалей</a></li>
+          <li class="item"><a href="#">Рейтинги</a></li>
+        </ul>
+      </nav>
+      <nav class="secondary-nav">
+        <ul class="list">
+          <li class="item"><a href="#">Главная</a></li>
+          <li class="item"><a href="#">Футбол</a></li>
+        </ul>
+      </nav>
+      <section class="tournament-section">
+        <div class="content-wrapper">
+          <header class="tournament-header">
+            <img
+              src="/vite-sass-app-template/assets/upl-logo.png"
+              alt="upl logo"
+              width="48"
+              height="48"
+            />
+            <div>
+              <h1 class="title">Украинская премьер-лига</h1>
+              <p class="description">
+                Сезон 2019/2020&nbsp;&nbsp;&nbsp;32-й тур
+              </p>
+            </div>
+          </header>
+          <nav>
+            <ul>
+              <li><a href="#">Главная</a></li>
+              <li><a href="#" class="active">Таблица</a></li>
+              <li><a href="#">Календарь</a></li>
+              <li><a href="#">Бомбардиры</a></li>
+            </ul>
+          </nav>
+        </div>
+      </section>
+    </main>
+
+    
+  </body>
+</html>
