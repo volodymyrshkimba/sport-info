@@ -188,28 +188,269 @@
   .content-wrapper {
     border: 1px solid var(--accent-color);
     border-radius: 2px;
-  }
 
-  .tournament-header {
-    display: flex;
-    gap: 12px;
-    padding: 16px 16px 24px 16px;
-    border-bottom: 1px solid var(--accent-color);
+    .tournament-header {
+      display: flex;
+      gap: 12px;
+      padding: 16px 16px 24px 16px;
+      border-bottom: 1px solid var(--accent-color);
 
-    .title {
-      font-weight: 500;
-      font-size: 18px;
-      line-height: 1.11;
-      text-transform: capitalize;
-      color: rgba($color: var(--main-text-color), $alpha: 0.9);
-      padding-top: 8px;
-      margin-bottom: 8px;
+      .title {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 1.11;
+        text-transform: capitalize;
+        color: rgba($color: var(--main-text-color), $alpha: 0.9);
+        padding-top: 8px;
+        margin-bottom: 8px;
+      }
+
+      .description {
+        font-size: 12px;
+        line-height: 1;
+        color: rgba($color: var(--main-text-color), $alpha: 0.38);
+      }
     }
 
-    .description {
+    .list {
+      display: flex;
+      justify-content: space-between;
+      padding-left: 16px;
+      padding-right: 18px;
+
+      .link {
+        position: relative;
+        display: block;
+        padding-top: 11px;
+        padding-bottom: 11px;
+        font-size: 12px;
+        color: rgba($color: var(--main-text-color), $alpha: 0.54);
+      }
+
+      .active::after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 2px;
+        bottom: -1px;
+        left: 0;
+        background-color: #ffce00;
+      }
+    }
+  }
+}
+
+.table-section {
+  .title {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.33;
+    color: rgba($color: var(--main-text-color), $alpha: 0.9);
+    padding: 0 12px;
+    margin-bottom: 9px;
+  }
+
+  .tabs {
+    padding: 0 12px;
+    margin-bottom: 16px;
+
+    .list {
+      display: flex;
+      gap: 6px;
+
+      .tab-button {
+        padding: 4px 12px;
+        font-size: 14px;
+        line-height: 1.71;
+        border-radius: 6px;
+        color: rgba($color: var(--main-text-color), $alpha: 0.54);
+        background-color: rgba(95, 120, 137, 0.08);
+      }
+
+      .active {
+        font-weight: 500;
+        color: rgba($color: var(--main-text-color), $alpha: 0.9);
+        background-color: #fadb00;
+      }
+    }
+  }
+
+  .tablesContainer {
+    margin-bottom: 18px;
+
+    .group-table {
+      width: 100%;
+      box-shadow: 0 1px 6px 0 rgba($color: var(--main-text-color), $alpha: 0.16);
+      border-radius: 6px;
+      overflow: hidden;
+
+      .block-params {
+        width: 20px;
+        text-align: center;
+      }
+
+      .group {
+        font-weight: 700;
+        text-transform: uppercase;
+        padding-left: 12px;
+      }
+
+      .games {
+        box-sizing: content-box;
+        padding-right: 8px;
+      }
+
+      .loses {
+        box-sizing: content-box;
+        padding-right: 8px;
+      }
+
+      .goals {
+        box-sizing: content-box;
+        padding-right: 8px;
+        width: 48px;
+        text-align: center;
+      }
+
+      .form {
+        display: none;
+      }
+
+      .points {
+        box-sizing: content-box;
+        padding-right: 12px;
+      }
+
+      .table-head {
+        color: var(--main-color);
+        background-color: #333333;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 1.67;
+
+        th {
+          padding-top: 4px;
+          padding-bottom: 4px;
+        }
+      }
+
+      .table-body {
+        td {
+          padding-top: 6px;
+          padding-bottom: 6px;
+          height: 24px;
+          vertical-align: middle;
+        }
+
+        td:not(:first-child) {
+          font-size: 14px;
+          line-height: 1.71;
+          font-family: var(--second-font-family);
+        }
+
+        td:last-child {
+          font-weight: 700;
+        }
+
+        tr {
+          border-top: 1px solid rgba(95, 120, 137, 0.16);
+        }
+
+        .team {
+          font-size: 12px;
+          line-height: 1.67;
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          height: 100%;
+          padding-left: 8px;
+
+          .place {
+            width: 20px;
+            height: 20px;
+            border-radius: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: var(--second-font-family);
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 1.43;
+            padding-top: 1px;
+          }
+
+          .logo {
+            object-fit: contain;
+          }
+
+          .first-second-place {
+            background-color: #2173d2;
+            color: var(--main-color);
+          }
+
+          .third-place {
+            background-color: #2ea2e5;
+            color: var(--main-color);
+          }
+        }
+      }
+    }
+
+    .group-table:not(:last-child) {
+      margin-bottom: 8px;
+    }
+  }
+
+  .table-info {
+    padding-left: 12px;
+    padding-right: 12px;
+
+    .info-item:not(:last-child) {
+      margin-bottom: 12px;
+    }
+
+    .info-item-title {
+      font-weight: 500;
       font-size: 12px;
-      line-height: 1;
-      color: rgba($color: var(--main-text-color), $alpha: 0.38);
+      line-height: 1.67;
+      margin-bottom: 4px;
+    }
+
+    .info-item-list {
+      font-size: 12px;
+      line-height: 1.33;
+    }
+
+    .qualif-item {
+      padding-left: 28px;
+      position: relative;
+    }
+
+    .qualif-item:before {
+      content: "";
+      position: absolute;
+      border-radius: 24px;
+      width: 6px;
+      height: 6px;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 7px;
+    }
+
+    .qualif-item:nth-child(1):before {
+      background-color: #2173d2;
+    }
+
+    .qualif-item:nth-child(2):before {
+      background-color: #2d9bdb;
+    }
+
+    .qualif-item:nth-child(3):before {
+      background-color: #fcac1f;
+    }
+
+    .qualif-item:nth-child(4):before {
+      background-color: #ec6a32;
     }
   }
 }

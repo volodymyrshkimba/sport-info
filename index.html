@@ -6,7 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap"
       rel="stylesheet"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -93,14 +93,149 @@
             </div>
           </header>
           <nav>
-            <ul>
-              <li><a href="#">Главная</a></li>
-              <li><a href="#" class="active">Таблица</a></li>
-              <li><a href="#">Календарь</a></li>
-              <li><a href="#">Бомбардиры</a></li>
+            <ul class="list">
+              <li><a class="link" href="#">Главная</a></li>
+              <li>
+                <a class="link active" href="#">Таблица</a>
+              </li>
+              <li><a class="link" href="#">Календарь</a></li>
+              <li><a class="link" href="#">Бомбардиры</a></li>
             </ul>
           </nav>
         </div>
+      </section>
+
+      <section class="table-section">
+        <h2 class="title">Турнирная таблица</h2>
+        <div class="tabs">
+          <ul class="list">
+            <li><button class="tab-button active">Загальна</button></li>
+            <li><button class="tab-button">Дома</button></li>
+            <li><button class="tab-button">В гостях</button></li>
+          </ul>
+        </div>
+        <div id="tablesContainer" class="tablesContainer">
+          <!-- <table class="group-table">
+            <thead class="table-head">
+              <tr>
+                <th class="group">Група А</th>
+                <th class="games block-params">И</th>
+                <th class="wins block-params">В</th>
+                <th class="drows block-params">Н</th>
+                <th class="loses block-params">П</th>
+                <th class="goals">З - П</th>
+                <th class="form">Форма</th>
+                <th class="points block-params">О</th>
+              </tr>
+            </thead>
+            <tbody class="table-body">
+              <tr>
+                <td class="team">
+                  <span class="place first-second-place">1</span>
+                  <span
+                    ><img
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg/300px-FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg.png"
+                      alt="logo"
+                      width="24"
+                      height="24"
+                  /></span>
+                  <span>Бавария</span>
+                </td>
+                <td class="games block-params">6</td>
+                <td class="wins block-params">4</td>
+                <td class="drows block-params">1</td>
+                <td class="loses block-params">1</td>
+                <td class="goals">16 - 4</td>
+                <td class="form">wwwdl</td>
+                <td class="points block-params">13</td>
+              </tr>
+              <tr>
+                <td class="team">
+                  <span class="place first-second-place">2</span>
+                  <span
+                    ><img
+                      src="https://upload.wikimedia.org/wikipedia/ru/thumb/2/24/FC_Barcelona.svg/213px-FC_Barcelona.svg.png"
+                      alt="logo"
+                      width="24"
+                      height="24"
+                  /></span>
+                  <span>Копенгаген</span>
+                </td>
+                <td class="games block-params">6</td>
+                <td class="wins block-params">2</td>
+                <td class="drows block-params">3</td>
+                <td class="loses block-params">1</td>
+                <td class="goals">8 - 10</td>
+                <td class="form">wwllw</td>
+                <td class="points block-params">9</td>
+              </tr>
+              <tr>
+                <td class="team">
+                  <span class="place third-place">3</span>
+                  <span
+                    ><img
+                      src="https://upload.wikimedia.org/wikipedia/ru/thumb/8/8a/FC_Real_Madrid_Logo.svg/279px-FC_Real_Madrid_Logo.svg.png"
+                      alt="logo"
+                      width="24"
+                      height="24"
+                      class="logo"
+                  /></span>
+                  <span>Галатасарай</span>
+                </td>
+                <td class="games block-params">6</td>
+                <td class="wins block-params">2</td>
+                <td class="drows block-params">2</td>
+                <td class="loses block-params">2</td>
+                <td class="goals">6 - 11</td>
+                <td class="form">lwwww</td>
+                <td class="points block-params">8</td>
+              </tr>
+              <tr>
+                <td class="team">
+                  <span class="place">4</span>
+                  <span
+                    ><img
+                      src="https://upload.wikimedia.org/wikipedia/ru/thumb/a/a7/Paris_Saint-Germain_F.C..svg/300px-Paris_Saint-Germain_F.C..svg.png"
+                      alt="logo"
+                      width="24"
+                      height="24"
+                  /></span>
+                  <span>Манчестер Юнайтед</span>
+                </td>
+                <td class="games block-params">6</td>
+                <td class="wins block-params">0</td>
+                <td class="drows block-params">2</td>
+                <td class="loses block-params">4</td>
+                <td class="goals">7 - 12</td>
+                <td class="form">ldwdd</td>
+                <td class="points block-params">2</td>
+              </tr>
+            </tbody>
+          </table> -->
+        </div>
+
+        <ul class="table-info">
+          <li class="info-item">
+            <h3 class="info-item-title">Квалификация</h3>
+            <ul class="info-item-list">
+              <li class="qualif-item">Лига чемпионов УЕФА</li>
+              <li class="qualif-item">Лига чемпионов УЕФА</li>
+              <li class="qualif-item">Лига Европы УЕФА</li>
+              <li class="qualif-item">Понижение</li>
+            </ul>
+          </li>
+          <li class="info-item">
+            <h3 class="info-item-title">Сокращения</h3>
+            <ul class="info-item-list">
+              <li>О Очки</li>
+              <li>И Игры</li>
+              <li>3-П Забитые - пропущенные</li>
+              <li>В Выигрыш</li>
+              <li>Н Ничья</li>
+              <li>П Поражение</li>
+            </ul>
+          </li>
+        </ul>
       </section>
     </main>
 
