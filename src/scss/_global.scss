@@ -11,3 +11,41 @@ img {
 svg {
   display: block;
 }
+
+button {
+  cursor: pointer;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 18px;
+  color: rgba($color: var(--main-text-color), $alpha: 0.9);
+}
+
+.section-padding {
+  @media (max-width: 1023px) {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+.marks-icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 2px;
+}
+
+.win {
+  background-color: #00b16d;
+}
+
+.lose {
+  background-color: #f55333;
+}
+
+.draw {
+  background-color: #f2d927;
+}

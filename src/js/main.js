@@ -171,6 +171,10 @@ const groupTablesData = [
   },
 ];
 
+const winMark = document.getElementById("marks-icon-win").outerHTML;
+const loseMark = document.getElementById("marks-icon-lose").outerHTML;
+const drawMark = document.getElementById("marks-icon-draw").outerHTML;
+
 const groupedByGroup = groupTablesData.reduce((acc, team) => {
   const group = acc.find((g) => g.groupName === team.group);
 
@@ -186,8 +190,23 @@ const groupedByGroup = groupTablesData.reduce((acc, team) => {
   return acc;
 }, []);
 
+function getMarksFromLettersArray(arr) {
+  const markup = arr.map((letter) =>
+    letter === "W"
+      ? winMark
+      : letter === "D"
+      ? drawMark
+      : letter === "L"
+      ? loseMark
+      : ""
+  );
+
+  return markup.join("");
+}
+
 function renderGroupTables() {
   const container = document.getElementById("tablesContainer");
+  console.log(groupedByGroup);
 
   const markup = groupedByGroup
     .map(({ groupName, teams }) => {
@@ -204,7 +223,15 @@ function renderGroupTables() {
                   : index === 2
                   ? "third-place"
                   : ""
-              }">${index + 1}</span>
+              }">${index + 1}${
+            index === 0
+              ? '<span class="tooltip">Лига чемпионов<span class="tooltip-arrow"></span></span>'
+              : index === 1
+              ? '<span class="tooltip">Лига чемпионов<span class="tooltip-arrow"></span></span>'
+              : index === 2
+              ? '<span class="tooltip">Лига чемпионов<span class="tooltip-arrow"></span></span>'
+              : ""
+          }</span>
               <span>
                 <img src="${
                   team.logo
@@ -217,7 +244,7 @@ function renderGroupTables() {
             <td class="drows block-params">${team.draws}</td>
             <td class="loses block-params">${team.loses}</td>
             <td class="goals">${team.scored} - ${team.conceded}</td>
-				<td class="form">${team.form.join("")}</td>
+				<td class="form">${getMarksFromLettersArray(team.form)}</td>
             <td class="points block-params">${team.points}</td>
           </tr>`;
         })
