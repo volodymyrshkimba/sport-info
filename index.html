@@ -11,7 +11,7 @@
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sport Info</title>
-    <script type="module" crossorigin src="/sport-info/assets/index-80027229.js"></script>
+    <script type="module" crossorigin src="/sport-info/assets/index-90a2fce4.js"></script>
     <link rel="stylesheet" href="/sport-info/assets/index.css">
   </head>
   <body>
@@ -78,167 +78,289 @@
           <li class="item"><a href="#">Футбол</a></li>
         </ul>
       </nav>
-      <section class="tournament-section">
-        <div class="content-wrapper">
-          <header class="tournament-header">
-            <img
-              src="/sport-info/assets/upl-logo.png"
-              alt="upl logo"
-              width="48"
-              height="48"
-            />
-            <div>
-              <h1 class="title">Украинская премьер-лига</h1>
-              <p class="description">
-                Сезон 2019/2020&nbsp;&nbsp;&nbsp;32-й тур
-              </p>
+
+      <div class="content-wrapper">
+        <div class="left-column">
+          <section class="tournament-section section-padding">
+            <div class="tournament-content-wrapper">
+              <header class="tournament-header">
+                <picture>
+                  <source
+                    srcset="/sport-info/assets/upl-logo-desctop.png "
+                    media="(min-width: 1024px)"
+                    width="80"
+                    height="80"
+                  />
+                  <img
+                    src="/sport-info/assets/upl-logo.png"
+                    alt="upl logo"
+                    width="48"
+                    height="48"
+                  />
+                </picture>
+                <div>
+                  <h1 class="title">Украинская премьер-лига</h1>
+                  <p class="description">
+                    Сезон 2019/2020&nbsp;&nbsp;&nbsp;32-й тур
+                  </p>
+                </div>
+              </header>
+              <nav>
+                <ul class="list">
+                  <li><a class="link" href="#">Главная</a></li>
+                  <li>
+                    <a class="link active" href="#">Таблица</a>
+                  </li>
+                  <li><a class="link" href="#">Календарь</a></li>
+                  <li><a class="link" href="#">Бомбардиры</a></li>
+                  <li class="shown"><a class="link" href="#">Зрители</a></li>
+                  <li class="shown"><a class="link" href="#">Трансферы</a></li>
+                </ul>
+              </nav>
             </div>
-          </header>
-          <nav>
-            <ul class="list">
-              <li><a class="link" href="#">Главная</a></li>
-              <li>
-                <a class="link active" href="#">Таблица</a>
+          </section>
+          <section class="table-section">
+            <div class="title-tabs-wrapper">
+              <h2 class="table-title title">Турнирная таблица</h2>
+              <ul class="tabs">
+                <li>
+                  <button class="tab-button active">
+                    <span class="general-ua">Загальна</span>
+                    <span class="general-ru">Общая</span>
+                  </button>
+                </li>
+                <li><button class="tab-button">Дома</button></li>
+                <li><button class="tab-button">В гостях</button></li>
+              </ul>
+            </div>
+            <div id="tablesContainer" class="tablesContainer"></div>
+            <ul class="table-info">
+              <li class="info-item">
+                <h3 class="info-item-title">Квалификация</h3>
+                <ul class="info-item-list">
+                  <li class="qualif-item">
+                    <span class="phone-text">Лига чемпионов УЕФА</span>
+                    <span class="desktop-text"
+                      >Чемпионы Лига чемпионов УЕФА</span
+                    >
+                  </li>
+                  <li class="qualif-item">Лига чемпионов УЕФА</li>
+                  <li class="qualif-item">Лига Европы УЕФА</li>
+                  <li class="qualif-item">Понижение</li>
+                </ul>
               </li>
-              <li><a class="link" href="#">Календарь</a></li>
-              <li><a class="link" href="#">Бомбардиры</a></li>
+              <li class="info-item">
+                <h3 class="info-item-title">Сокращения</h3>
+                <ul class="info-item-list abbrev-list">
+                  <li class="abbrev-item shown">
+                    <span class="abbrev-letter">О</span> Очки
+                  </li>
+                  <li class="abbrev-item">
+                    <span class="abbrev-letter">В</span> Выигрыш
+                  </li>
+                  <li class="abbrev-item shown">
+                    <span class="abbrev-letter">И</span> Игры
+                  </li>
+                  <li class="abbrev-item">
+                    <span class="abbrev-letter">Н</span> Ничья
+                  </li>
+                  <li class="abbrev-item goals-item">
+                    <span class="abbrev-letter">3-П</span>
+                    Забитые - пропущенные
+                  </li>
+                  <li class="abbrev-item loses-item">
+                    <span class="abbrev-letter">П</span> Поражение
+                  </li>
+                </ul>
+              </li>
+              <li class="info-item info-item-marks">
+                <h3 class="info-item-title">Форма</h3>
+                <ul class="info-item-list">
+                  <li class="marks-item">
+                    <span id="marks-icon-win" class="marks-icon win">
+                      <svg width="10" height="6">
+                        <use href="/sport-info/assets/sprite.svg#win"></use>
+                      </svg>
+                    </span>
+                    Выигрыш
+                  </li>
+                  <li class="marks-item">
+                    <span id="marks-icon-lose" class="marks-icon lose">
+                      <svg width="7" height="6">
+                        <use href="/sport-info/assets/sprite.svg#lose"></use>
+                      </svg>
+                    </span>
+                    Поражение
+                  </li>
+                  <li class="marks-item">
+                    <span id="marks-icon-draw" class="marks-icon draw">
+                      <svg width="6" height="6">
+                        <use href="/sport-info/assets/sprite.svg#draw"></use>
+                      </svg>
+                    </span>
+                    Ничья
+                  </li>
+                </ul>
+              </li>
             </ul>
-          </nav>
+          </section>
         </div>
-      </section>
-
-      <section class="table-section">
-        <h2 class="title">Турнирная таблица</h2>
-        <div class="tabs">
-          <ul class="list">
-            <li><button class="tab-button active">Загальна</button></li>
-            <li><button class="tab-button">Дома</button></li>
-            <li><button class="tab-button">В гостях</button></li>
-          </ul>
-        </div>
-        <div id="tablesContainer" class="tablesContainer">
-          <!-- <table class="group-table">
-            <thead class="table-head">
-              <tr>
-                <th class="group">Група А</th>
-                <th class="games block-params">И</th>
-                <th class="wins block-params">В</th>
-                <th class="drows block-params">Н</th>
-                <th class="loses block-params">П</th>
-                <th class="goals">З - П</th>
-                <th class="form">Форма</th>
-                <th class="points block-params">О</th>
-              </tr>
-            </thead>
-            <tbody class="table-body">
-              <tr>
-                <td class="team">
-                  <span class="place first-second-place">1</span>
-                  <span
-                    ><img
-                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg/300px-FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg.png"
-                      alt="logo"
-                      width="24"
-                      height="24"
-                  /></span>
-                  <span>Бавария</span>
-                </td>
-                <td class="games block-params">6</td>
-                <td class="wins block-params">4</td>
-                <td class="drows block-params">1</td>
-                <td class="loses block-params">1</td>
-                <td class="goals">16 - 4</td>
-                <td class="form">wwwdl</td>
-                <td class="points block-params">13</td>
-              </tr>
-              <tr>
-                <td class="team">
-                  <span class="place first-second-place">2</span>
-                  <span
-                    ><img
-                      src="https://upload.wikimedia.org/wikipedia/ru/thumb/2/24/FC_Barcelona.svg/213px-FC_Barcelona.svg.png"
-                      alt="logo"
-                      width="24"
-                      height="24"
-                  /></span>
-                  <span>Копенгаген</span>
-                </td>
-                <td class="games block-params">6</td>
-                <td class="wins block-params">2</td>
-                <td class="drows block-params">3</td>
-                <td class="loses block-params">1</td>
-                <td class="goals">8 - 10</td>
-                <td class="form">wwllw</td>
-                <td class="points block-params">9</td>
-              </tr>
-              <tr>
-                <td class="team">
-                  <span class="place third-place">3</span>
-                  <span
-                    ><img
-                      src="https://upload.wikimedia.org/wikipedia/ru/thumb/8/8a/FC_Real_Madrid_Logo.svg/279px-FC_Real_Madrid_Logo.svg.png"
-                      alt="logo"
-                      width="24"
-                      height="24"
-                      class="logo"
-                  /></span>
-                  <span>Галатасарай</span>
-                </td>
-                <td class="games block-params">6</td>
-                <td class="wins block-params">2</td>
-                <td class="drows block-params">2</td>
-                <td class="loses block-params">2</td>
-                <td class="goals">6 - 11</td>
-                <td class="form">lwwww</td>
-                <td class="points block-params">8</td>
-              </tr>
-              <tr>
-                <td class="team">
-                  <span class="place">4</span>
-                  <span
-                    ><img
-                      src="https://upload.wikimedia.org/wikipedia/ru/thumb/a/a7/Paris_Saint-Germain_F.C..svg/300px-Paris_Saint-Germain_F.C..svg.png"
-                      alt="logo"
-                      width="24"
-                      height="24"
-                  /></span>
-                  <span>Манчестер Юнайтед</span>
-                </td>
-                <td class="games block-params">6</td>
-                <td class="wins block-params">0</td>
-                <td class="drows block-params">2</td>
-                <td class="loses block-params">4</td>
-                <td class="goals">7 - 12</td>
-                <td class="form">ldwdd</td>
-                <td class="points block-params">2</td>
-              </tr>
-            </tbody>
-          </table> -->
-        </div>
-
-        <ul class="table-info">
-          <li class="info-item">
-            <h3 class="info-item-title">Квалификация</h3>
-            <ul class="info-item-list">
-              <li class="qualif-item">Лига чемпионов УЕФА</li>
-              <li class="qualif-item">Лига чемпионов УЕФА</li>
-              <li class="qualif-item">Лига Европы УЕФА</li>
-              <li class="qualif-item">Понижение</li>
+        <div class="right-column">
+          <section class="news-section section-padding">
+            <h2 class="news-title title">Главные новости</h2>
+            <ul class="news-list">
+              <li class="news-item">
+                <article>
+                  <a class="news-link" href="#">
+                    <span class="icon">
+                      <svg width="16" height="16">
+                        <use href="/sport-info/assets/sprite.svg#news-arrow"></use>
+                      </svg>
+                    </span>
+                    <h3>
+                      Артем ФРАНКОВ: «Я не сторонник перехода на систему
+                      весна-осень»
+                    </h3>
+                  </a>
+                </article>
+              </li>
+              <li class="news-item">
+                <article>
+                  <a class="news-link" href="#">
+                    <span class="icon">
+                      <svg width="16" height="16">
+                        <use href="/sport-info/assets/sprite.svg#news-arrow"></use>
+                      </svg>
+                    </span>
+                    <h3>
+                      Welcome to the team! Макгрегор поприветствовал Пакьяо в
+                      своей команде
+                    </h3>
+                  </a>
+                </article>
+              </li>
+              <li class="news-item">
+                <article>
+                  <a class="news-link" href="#">
+                    <span class="icon">
+                      <svg width="16" height="16">
+                        <use href="/sport-info/assets/sprite.svg#news-arrow"></use>
+                      </svg>
+                    </span>
+                    <h3>
+                      КАРИКАТУРА ДНЯ. Сэйв столетия от Бэнкса после удара Пеле
+                    </h3>
+                  </a>
+                </article>
+              </li>
+              <li class="news-item">
+                <article>
+                  <a class="news-link" href="#">
+                    <span class="icon">
+                      <svg width="16" height="16">
+                        <use href="/sport-info/assets/sprite.svg#news-arrow"></use>
+                      </svg>
+                    </span>
+                    <h3>Евгений Лунин стал игроком месяца в Овьедо</h3>
+                  </a>
+                </article>
+              </li>
+              <li class="news-item">
+                <article>
+                  <a class="news-link" href="#">
+                    <span class="icon">
+                      <svg width="16" height="16">
+                        <use href="/sport-info/assets/sprite.svg#news-arrow"></use>
+                      </svg>
+                    </span>
+                    <h3>
+                      Welcome to the team! Макгрегор поприветствовал Пакьяо в
+                      своей команде
+                    </h3>
+                  </a>
+                </article>
+              </li>
             </ul>
-          </li>
-          <li class="info-item">
-            <h3 class="info-item-title">Сокращения</h3>
-            <ul class="info-item-list">
-              <li>О Очки</li>
-              <li>И Игры</li>
-              <li>3-П Забитые - пропущенные</li>
-              <li>В Выигрыш</li>
-              <li>Н Ничья</li>
-              <li>П Поражение</li>
+          </section>
+          <section class="trends-section section-padding">
+            <h2 class="trends-title title">Тренды</h2>
+            <ul class="list">
+              <li>
+                <a class="link" href="#">
+                  <svg width="14" height="14">
+                    <use href="/sport-info/assets/sprite.svg#lightning"></use>
+                  </svg>
+                  Коронавирус
+                </a>
+              </li>
+              <li>
+                <a class="link" href="#">
+                  <svg width="14" height="14">
+                    <use href="/sport-info/assets/sprite.svg#lightning"></use>
+                  </svg>
+                  Трансферы лета
+                </a>
+              </li>
+              <li>
+                <a class="link" href="#">
+                  <svg width="14" height="14">
+                    <use href="/sport-info/assets/sprite.svg#lightning"></use>
+                  </svg>
+                  Рейтинг клубов
+                </a>
+              </li>
+              <li>
+                <a class="link" href="#">
+                  <svg width="14" height="14">
+                    <use href="/sport-info/assets/sprite.svg#lightning"></use>
+                  </svg>
+                  Барселона
+                </a>
+              </li>
             </ul>
-          </li>
-        </ul>
-      </section>
+          </section>
+          <section class="video-section section-padding">
+            <h2 class="video-section-title title">
+              Видео
+              <svg class="icon" width="13" height="19">
+                <use href="/sport-info/assets/sprite.svg#video-camera"></use>
+              </svg>
+            </h2>
+            <article class="video-wrapper">
+              <a href="#">
+                <figure class="data-wrapper">
+                  <img src="/sport-info/assets/video-preview.png" alt="girl" />
+                  <figcaption class="desctiption">
+                    <div class="icons">
+                      <p class="game-name">Футбол</p>
+                      <span class="camera-logo">
+                        <svg width="18" height="12">
+                          <use
+                            href="/sport-info/assets/sprite.svg#video-camera-stroke"
+                          ></use>
+                        </svg>
+                      </span>
+                    </div>
+                    <h3 class="video-title">
+                      Руслан КОСТЫШИН: «Футболисты выступили с инициативой
+                      сократить зарплаты»
+                    </h3>
+                    <div class="data-comments">
+                      <time datetime="2020-10-28">28 октября 2020</time>
+                      <p class="comments">
+                        <svg width="16" height="16">
+                          <use href="/sport-info/assets/sprite.svg#message"></use>
+                        </svg>
+                        999
+                      </p>
+                    </div>
+                  </figcaption>
+                </figure>
+              </a>
+            </article>
+          </section>
+        </div>
+      </div>
     </main>
 
     
