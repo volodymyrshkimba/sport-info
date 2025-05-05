@@ -11,7 +11,7 @@
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sport Info</title>
-    <script type="module" crossorigin src="/sport-info/assets/index-6b7de402.js"></script>
+    <script type="module" crossorigin src="/sport-info/assets/index-e4888108.js"></script>
     <link rel="stylesheet" href="/sport-info/assets/index.css">
   </head>
   <body>
@@ -124,13 +124,19 @@
               <h2 class="table-title title">Турнирная таблица</h2>
               <ul class="tabs">
                 <li>
-                  <button class="tab-button active">
+                  <button class="tab-button active" data-type="general-btn">
                     <span class="general-ua">Загальна</span>
                     <span class="general-ru">Общая</span>
                   </button>
                 </li>
-                <li><button class="tab-button">Дома</button></li>
-                <li><button class="tab-button">В гостях</button></li>
+                <li>
+                  <button class="tab-button" data-type="home-btn">Дома</button>
+                </li>
+                <li>
+                  <button class="tab-button" data-type="away-btn">
+                    В гостях
+                  </button>
+                </li>
               </ul>
             </div>
             <div id="tablesContainer" class="tablesContainer"></div>

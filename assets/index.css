@@ -196,6 +196,10 @@ button {
   background-color: #f2d927;
 }
 
+.desktop-only {
+  display: none;
+}
+
 .main-header {
   background-color: black;
   display: -webkit-box;
@@ -427,11 +431,20 @@ button {
 .content-wrapper .left-column .table-section .tablesContainer .group-table[data-type=home] {
   display: none;
 }
+.content-wrapper .left-column .table-section .tablesContainer .group-table[data-type=home].active {
+  display: table;
+}
 .content-wrapper .left-column .table-section .tablesContainer .group-table[data-type=away] {
   display: none;
 }
+.content-wrapper .left-column .table-section .tablesContainer .group-table[data-type=away].active {
+  display: table;
+}
 .content-wrapper .left-column .table-section .tablesContainer .group-table[data-type=general] {
   display: none;
+}
+.content-wrapper .left-column .table-section .tablesContainer .group-table[data-type=general].active {
+  display: table;
 }
 .content-wrapper .left-column .table-section .tablesContainer .group-table .block-params {
   width: 24px;
@@ -514,8 +527,8 @@ button {
   padding-left: 8px;
 }
 .content-wrapper .left-column .table-section .tablesContainer .group-table .table-body .team .place {
-  width: 20px;
-  height: 20px;
+  min-width: 20px;
+  min-height: 20px;
   border-radius: 24px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -577,9 +590,18 @@ button {
   border-right: 10px solid transparent;
   border-bottom: 10px solid #333;
 }
-.content-wrapper .left-column .table-section .tablesContainer .group-table .table-body .team .logo {
+.content-wrapper .left-column .table-section .tablesContainer .group-table .table-body .team .logo-wrapper {
+  -webkit-flex-shrink: 0;
+          flex-shrink: 0;
+}
+.content-wrapper .left-column .table-section .tablesContainer .group-table .table-body .team .logo-wrapper .logo {
   -o-object-fit: contain;
      object-fit: contain;
+}
+.content-wrapper .left-column .table-section .tablesContainer .group-table .table-body .team .team-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .content-wrapper .left-column .table-section .tablesContainer .group-table .table-body .team .first-second-place {
   position: relative;
@@ -895,6 +917,12 @@ button {
   line-height: 0.92;
 }
 @media (min-width: 1024px){
+  .desktop-only {
+    display: inline;
+  }
+  .mobile-only {
+    display: none;
+  }
   .main-header .header-left-side .burger-btn {
     margin-right: 12px;
   }
@@ -1109,8 +1137,8 @@ button {
     line-height: 1.6;
   }
   .content-wrapper .left-column .table-section .tablesContainer .group-table .table-body .team .place {
-    width: 24px;
-    height: 24px;
+    min-width: 24px;
+    min-height: 24px;
   }
   .content-wrapper .left-column .table-section .tablesContainer .group-table .table-body .team .first-second-place {
     background-color: #00b86c;

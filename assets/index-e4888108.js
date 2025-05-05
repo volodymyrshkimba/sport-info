@@ -40,6 +40,33 @@
   }
 })();
 const style = "";
+const activateTabs = () => {
+  const generalTables = document.querySelectorAll('[data-type="general"]');
+  const homeTables = document.querySelectorAll('[data-type="home"]');
+  const awayTables = document.querySelectorAll('[data-type="away"]');
+  const tabButtons = document.querySelectorAll(".tab-button");
+  const handleTabClick = (event) => {
+    const clickedButton = event.currentTarget;
+    const type = clickedButton.dataset.type;
+    tabButtons.forEach((btn) => btn.classList.remove("active"));
+    clickedButton.classList.add("active");
+    [...generalTables, ...homeTables, ...awayTables].forEach(
+      (table) => table.classList.remove("active")
+    );
+    let targetTables;
+    if (type === "general-btn") {
+      targetTables = generalTables;
+    } else if (type === "home-btn") {
+      targetTables = homeTables;
+    } else if (type === "away-btn") {
+      targetTables = awayTables;
+    }
+    targetTables.forEach((table) => table.classList.add("active"));
+  };
+  tabButtons.forEach((button) => {
+    button.addEventListener("click", handleTabClick);
+  });
+};
 function bind(fn, thisArg) {
   return function wrap() {
     return fn.apply(thisArg, arguments);
@@ -2464,6 +2491,8 @@ const getMarksFromLettersArray = (arr) => {
   return markup.join("");
 };
 const container = document.getElementById("tablesContainer");
+const juveLogo = "https://upload.wikimedia.org/wikipedia/commons/4/4e/Juventus_FC_-_logo_black_%28Italy%2C_2017%29.svg";
+const liverpoolLogo = "https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg";
 const renderGroupTables = (groupedByGroup, type) => {
   const markup = groupedByGroup.map(({ groupName, teams }) => {
     const rows = teams.map((team, index) => {
@@ -2471,10 +2500,10 @@ const renderGroupTables = (groupedByGroup, type) => {
 			 <tr>
 				<td class="team">
 				  <span class="place ${index === 0 || index === 1 ? "first-second-place" : index === 2 ? "third-place" : ""}">${index + 1}${index <= 2 ? '<span class="tooltip">Ліга чемпіонів<span class="tooltip-arrow"></span></span>' : ""}</span>
-				  <span>
-					 <img src="${team.logo}" alt="logo" width="24" height="24" class="logo" />
+				  <span class="logo-wrapper">
+					 <img src="${team.name === "Ливерпуль" ? liverpoolLogo : team.name === "Ювентус" ? juveLogo : team.logo}" alt="logo" width="24" height="24" class="logo" />
 				  </span>
-				  <span>${team.name}</span>
+				  <span class="team-name">${team.name}</span>
 				</td>
 				<td class="games block-params">${team.games}</td>
 				<td class="wins block-params">${team.wins}</td>
@@ -2486,17 +2515,23 @@ const renderGroupTables = (groupedByGroup, type) => {
 			 </tr>`;
     }).join("");
     return `
-		<table class="group-table" data-type="${type}">
+		<table class="group-table ${type === "general" ? "active" : ""}" data-type="${type}">
 		  <thead class="table-head">
 			 <tr>
 				<th class="group">Група ${groupName}</th>
-				<th class="games block-params">И</th>
+				<th class="games block-params">
+				  <span class="mobile-only">И</span>
+              <span class="desktop-only">Игры</span>
+				</th>
 				<th class="wins block-params">В</th>
 				<th class="drows block-params">Н</th>
 				<th class="loses block-params">П</th>
 				<th class="goals">З - П</th>
 				<th class="form">Форма</th>
-				<th class="points block-params">О</th>
+				<th class="points block-params">
+				  <span class="mobile-only">О</span>
+              <span class="desktop-only">Очки</span>
+				</th>
 			 </tr>
 		  </thead>
 		  <tbody class="table-body">
@@ -2514,5 +2549,6 @@ async function init() {
   renderGroupTables(groupedByGroup, "general");
   renderGroupTables(groupedByGroupHome, "home");
   renderGroupTables(groupedByGroupAway, "away");
+  activateTabs();
 }
 init();
