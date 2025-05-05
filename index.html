@@ -2,7 +2,7 @@
 <html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/sass.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -21,7 +21,11 @@
           </svg>
         </button>
         <a class="page-logo" href="#">
-          <img src="./src/img/logo.png" alt="logo" />
+          <img
+            src="./src/img/logo.png"
+            srcset="./src/img/logo.png 1x, ./src/img/logo@2x.png 2x"
+            alt="logo"
+          />
         </a>
       </div>
       <div class="action-buttons">
@@ -52,7 +56,13 @@
           </svg>
         </button>
         <button class="btn-size avatar-btn">
-          <img src="./src/img/avatar.png" alt="avatar" width="28" height="28" />
+          <img
+            src="./src/img/avatar.png"
+            srcset="./src/img/avatar.png 1x, ./src/img/avatar@2x.png 2x"
+            alt="avatar"
+            width="28"
+            height="28"
+          />
         </button>
       </div>
     </header>
@@ -84,12 +94,19 @@
               <header class="tournament-header">
                 <picture>
                   <source
-                    srcset="./src/img/upl-logo-desctop.png"
+                    srcset="
+                      ./src/img/upl-logo-desktop.png    1x,
+                      ./src/img/upl-logo-desktop@2x.png 2x
+                    "
                     media="(min-width: 1024px)"
                     width="80"
                     height="80"
                   />
                   <img
+                    srcset="
+                      ./src/img/upl-logo.png    1x,
+                      ./src/img/upl-logo@2x.png 2x
+                    "
                     src="./src/img/upl-logo.png"
                     alt="upl logo"
                     width="48"
@@ -333,7 +350,14 @@
             <article class="video-wrapper">
               <a href="#">
                 <figure class="data-wrapper">
-                  <img src="./src/img/video-preview.png" alt="girl" />
+                  <img
+                    src="./src/img/video-preview.png"
+                    srcset="
+                      ./src/img/video-preview.png    1x,
+                      ./src/img/video-preview@2x.png 2x
+                    "
+                    alt="girl"
+                  />
                   <figcaption class="desctiption">
                     <div class="icons">
                       <p class="game-name">Футбол</p>

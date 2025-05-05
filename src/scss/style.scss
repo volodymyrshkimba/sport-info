@@ -171,6 +171,11 @@
       top: 50%;
       transform: translateY(-50%);
       right: 12px;
+
+      @media screen and (min-resolution: 192dpi) {
+        background-image: url("../img/next@2x.png");
+        background-size: 8px 8px;
+      }
     }
   }
 
