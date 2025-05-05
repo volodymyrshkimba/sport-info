@@ -1,5 +1,5 @@
-<svg width="0" height="0" class="hidden">
-  <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 12" id="burger">
+<svg>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 12" id="burger">
     <path d="M0 12H18V10H0V12ZM0 7H18V5H0V7ZM0 0V2H18V0H0Z" fill="#F2F2F2"></path>
   </symbol>
   <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" id="radio">
