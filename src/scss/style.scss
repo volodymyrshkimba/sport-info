@@ -369,14 +369,25 @@
 
           &[data-type="home"] {
             display: none;
+
+            &.active {
+              display: table;
+            }
           }
 
           &[data-type="away"] {
             display: none;
+
+            &.active {
+              display: table;
+            }
           }
 
           &[data-type="general"] {
             display: none;
+            &.active {
+              display: table;
+            }
           }
 
           .block-params {
@@ -505,8 +516,8 @@
               padding-left: 8px;
 
               .place {
-                width: 20px;
-                height: 20px;
+                min-width: 20px;
+                min-height: 20px;
                 border-radius: 24px;
                 display: flex;
                 justify-content: center;
@@ -518,8 +529,8 @@
                 padding-top: 1px;
 
                 @media (min-width: 1024px) {
-                  width: 24px;
-                  height: 24px;
+                  min-width: 24px;
+                  min-height: 24px;
                 }
 
                 .tooltip {
@@ -556,8 +567,18 @@
                 }
               }
 
-              .logo {
-                object-fit: contain;
+              .logo-wrapper {
+                flex-shrink: 0;
+
+                .logo {
+                  object-fit: contain;
+                }
+              }
+
+              .team-name {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
               }
 
               .first-second-place {

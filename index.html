@@ -17,7 +17,7 @@
       <div class="header-left-side">
         <button class="burger-btn btn-size">
           <svg width="18" height="12">
-            <use href="/src/img/icons.svg#burger"></use>
+            <use href="./src/img/icons.svg#burger"></use>
           </svg>
         </button>
         <a class="page-logo" href="#">
@@ -122,13 +122,19 @@
               <h2 class="table-title title">Турнирная таблица</h2>
               <ul class="tabs">
                 <li>
-                  <button class="tab-button active">
+                  <button class="tab-button active" data-type="general-btn">
                     <span class="general-ua">Загальна</span>
                     <span class="general-ru">Общая</span>
                   </button>
                 </li>
-                <li><button class="tab-button">Дома</button></li>
-                <li><button class="tab-button">В гостях</button></li>
+                <li>
+                  <button class="tab-button" data-type="home-btn">Дома</button>
+                </li>
+                <li>
+                  <button class="tab-button" data-type="away-btn">
+                    В гостях
+                  </button>
+                </li>
               </ul>
             </div>
             <div id="tablesContainer" class="tablesContainer"></div>
