@@ -1203,3 +1203,10 @@ button {
     padding-right: 12px;
   }
 }
+@media screen and (-webkit-min-device-pixel-ratio: 2), screen and (min--moz-device-pixel-ratio: 2), screen and (min-resolution: 192dpi){
+  .secondary-nav .list .item:not(:last-child)::before {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAB+SURBVHgBpZE7CoAwEEQ3BqyscgHByqt4Bg/qfQRbK0EICE66GPLZwYFX7CbzmhX5ZgQrcKKMTeYHTGAGB7hZgQc7I7GZHSWxhb1aUhKoJTWBStISNCWd8PHxoBEMYAE92MAVPxqyfKYfzJ9yTaAqlwTqck5AlUPSKzimHPIC/kgqmb12wHQAAAAASUVORK5CYII=");
+    -webkit-background-size: 8px 8px;
+            background-size: 8px 8px;
+  }
+}
