@@ -424,6 +424,15 @@ button {
   border-radius: 6px;
   overflow: hidden;
 }
+.content-wrapper .left-column .table-section .tablesContainer .group-table[data-type=home] {
+  display: none;
+}
+.content-wrapper .left-column .table-section .tablesContainer .group-table[data-type=away] {
+  display: none;
+}
+.content-wrapper .left-column .table-section .tablesContainer .group-table[data-type=general] {
+  display: none;
+}
 .content-wrapper .left-column .table-section .tablesContainer .group-table .block-params {
   width: 24px;
   text-align: center;
